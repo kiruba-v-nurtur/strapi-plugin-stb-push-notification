@@ -1,0 +1,35 @@
+{
+  "name": "@starberry/strapi-plugin-stb-push-notification",
+  "version": "0.1.0",
+  "description": "Strapi plugin for Firebase push notifications",
+  "strapi": {
+    "name": "push-notification",
+    "icon": "plug",
+    "description": "Description of push-notification plugin."
+  },
+  "dependencies": {},
+  "author": {
+    "name": "A Strapi developer",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/kiruba-v-nurtur/strapi-plugin-stb-push-notification"
+  }
+}

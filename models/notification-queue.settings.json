@@ -1,0 +1,47 @@
+{
+  "connection": "default",
+  "collectionName": "notification_queue",
+  "info": {
+    "name": "Notification Queue",
+    "description": "Stores pending notifications for users to be sent via Firebase Cloud Messaging"
+  },
+  "attributes": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    },
+    "data": {
+      "type": "json",
+      "default": {}
+    },
+    "clickUrl": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "sent", "failed", "partial"],
+      "default": "pending"
+    },
+    "sent_at": {
+      "type": "datetime"
+    },
+    "error_message": {
+      "type": "text"
+    },
+    "created_at": {
+      "type": "datetime"
+    },
+    "updated_at": {
+      "type": "datetime"
+    }
+  }
+}
+

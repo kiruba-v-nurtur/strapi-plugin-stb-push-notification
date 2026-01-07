@@ -1,0 +1,46 @@
+name: npm-publish-private
+# Publish Strapi Push Notification Plugin to GitHub Private NPM Registry
+
+on:
+  push:
+    branches:
+      - master   # Strapi v3
+      - v4       # Strapi v4
+      - v5       # Strapi v5
+
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout plugin repository
+        uses: actions/checkout@v3
+
+      - name: Checkout Starberry CI helpers
+        uses: actions/checkout@v3
+        with:
+          repository: starberry/platform-ci
+          fetch-depth: 0
+          persist-credentials: false
+          ssh-key: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+            QyNTUxOQAAACBLcQWza2J4zf9w7q87zzeF/EGMoRX+l+8vsrPYFE/nlgAAAJgmcZEAJnGR
+            AAAAAAtzc2gtZWQyNTUxOQAAACBLcQWza2J4zf9w7q87zzeF/EGMoRX+l+8vsrPYFE/nlg
+            AAAEA9UUCtdQQ4WsXHCmOSYfYUXiP7lHky9eiiJMw5+B6JrUtxBbNrYnjN/3DurzvPN4X8
+            QYyhFf6X7y+ys9gUT+eWAAAAEGdpZEBwb290bGUubG9jYWwBAgMEBQ==
+            -----END OPENSSH PRIVATE KEY-----
+          path: .github/platform-ci
+
+      - name: Publish private NPM package
+        uses: ./.github/platform-ci/npm-publish-private
+        with:
+          auth_token: ${{ secrets.STARBERRYCLOUD_GHP_TOKEN || github.token }}
+

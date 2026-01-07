@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/save-token",
+      "handler": "push-notification.saveToken",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/send-notification",
+      "handler": "push-notification.sendNotification",
+      "config": {
+        "policies": []
+      }
+    },
+     {
+      "method": "POST",
+      "path": "/process-notification",
+      "handler": "push-notification.processPendingNotifications",
+      "config": {
+        "policies": []
+      }
+    },
+     {
+      "method": "POST",
+      "path": "/notification-queue",
+      "handler": "push-notification.createNotificationQueue",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

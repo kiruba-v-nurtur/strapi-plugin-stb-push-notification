@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fcm",
+  "info": {
+    "name": "Fcm"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "token": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "browser": {
+      "type": "string",
+      "required": false
+    },
+    "expiresAt": {
+      "type": "datetime",
+      "required": false
+    },
+    "failureCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+     "userType": {
+      "type": "enumeration",
+      "enum": ["landlord", "tenant", "buyer", "seller"]
+    }
+  }
+}
