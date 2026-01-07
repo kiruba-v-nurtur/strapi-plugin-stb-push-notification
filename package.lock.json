@@ -1,7 +1,0 @@
-{
-  "name": "@starberry/strapi-plugin-stb-myaccount",
-  "version": "0.0.1",
-  "lockfileVersion": 1,
-  "requires": true,
-  "dependencies": {}
-}
